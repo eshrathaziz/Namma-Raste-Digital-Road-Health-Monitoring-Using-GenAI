@@ -26,20 +26,24 @@ import java.util.Set;
 public final class AppDatabase_Impl extends AppDatabase {
   private volatile ReportDao _reportDao;
 
+  private volatile UserDao _userDao;
+
   @Override
   @NonNull
   protected SupportSQLiteOpenHelper createOpenHelper(@NonNull final DatabaseConfiguration config) {
-    final SupportSQLiteOpenHelper.Callback _openCallback = new RoomOpenHelper(config, new RoomOpenHelper.Delegate(1) {
+    final SupportSQLiteOpenHelper.Callback _openCallback = new RoomOpenHelper(config, new RoomOpenHelper.Delegate(2) {
       @Override
       public void createAllTables(@NonNull final SupportSQLiteDatabase db) {
         db.execSQL("CREATE TABLE IF NOT EXISTS `reports` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `road` TEXT NOT NULL, `type` TEXT NOT NULL, `severity` TEXT NOT NULL, `date` TEXT NOT NULL, `name` TEXT NOT NULL, `gps` TEXT NOT NULL, `imageUri` TEXT)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS `users` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `email` TEXT NOT NULL, `password` TEXT NOT NULL)");
         db.execSQL("CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)");
-        db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '87b166dbf4bf01c319fb824dd415e34b')");
+        db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '712a98fd27eea2b66645e0b699406a5a')");
       }
 
       @Override
       public void dropAllTables(@NonNull final SupportSQLiteDatabase db) {
         db.execSQL("DROP TABLE IF EXISTS `reports`");
+        db.execSQL("DROP TABLE IF EXISTS `users`");
         final List<? extends RoomDatabase.Callback> _callbacks = mCallbacks;
         if (_callbacks != null) {
           for (RoomDatabase.Callback _callback : _callbacks) {
@@ -101,9 +105,22 @@ public final class AppDatabase_Impl extends AppDatabase {
                   + " Expected:\n" + _infoReports + "\n"
                   + " Found:\n" + _existingReports);
         }
+        final HashMap<String, TableInfo.Column> _columnsUsers = new HashMap<String, TableInfo.Column>(3);
+        _columnsUsers.put("id", new TableInfo.Column("id", "INTEGER", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsUsers.put("email", new TableInfo.Column("email", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsUsers.put("password", new TableInfo.Column("password", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        final HashSet<TableInfo.ForeignKey> _foreignKeysUsers = new HashSet<TableInfo.ForeignKey>(0);
+        final HashSet<TableInfo.Index> _indicesUsers = new HashSet<TableInfo.Index>(0);
+        final TableInfo _infoUsers = new TableInfo("users", _columnsUsers, _foreignKeysUsers, _indicesUsers);
+        final TableInfo _existingUsers = TableInfo.read(db, "users");
+        if (!_infoUsers.equals(_existingUsers)) {
+          return new RoomOpenHelper.ValidationResult(false, "users(com.nammaraste.health.data.UserEntity).\n"
+                  + " Expected:\n" + _infoUsers + "\n"
+                  + " Found:\n" + _existingUsers);
+        }
         return new RoomOpenHelper.ValidationResult(true, null);
       }
-    }, "87b166dbf4bf01c319fb824dd415e34b", "c3a964aa77255a732262f3d8a1e2bed2");
+    }, "712a98fd27eea2b66645e0b699406a5a", "446773d3f12ae669c64eef1f37f981b0");
     final SupportSQLiteOpenHelper.Configuration _sqliteConfig = SupportSQLiteOpenHelper.Configuration.builder(config.context).name(config.name).callback(_openCallback).build();
     final SupportSQLiteOpenHelper _helper = config.sqliteOpenHelperFactory.create(_sqliteConfig);
     return _helper;
@@ -114,7 +131,7 @@ public final class AppDatabase_Impl extends AppDatabase {
   protected InvalidationTracker createInvalidationTracker() {
     final HashMap<String, String> _shadowTablesMap = new HashMap<String, String>(0);
     final HashMap<String, Set<String>> _viewTables = new HashMap<String, Set<String>>(0);
-    return new InvalidationTracker(this, _shadowTablesMap, _viewTables, "reports");
+    return new InvalidationTracker(this, _shadowTablesMap, _viewTables, "reports","users");
   }
 
   @Override
@@ -124,6 +141,7 @@ public final class AppDatabase_Impl extends AppDatabase {
     try {
       super.beginTransaction();
       _db.execSQL("DELETE FROM `reports`");
+      _db.execSQL("DELETE FROM `users`");
       super.setTransactionSuccessful();
     } finally {
       super.endTransaction();
@@ -139,6 +157,7 @@ public final class AppDatabase_Impl extends AppDatabase {
   protected Map<Class<?>, List<Class<?>>> getRequiredTypeConverters() {
     final HashMap<Class<?>, List<Class<?>>> _typeConvertersMap = new HashMap<Class<?>, List<Class<?>>>();
     _typeConvertersMap.put(ReportDao.class, ReportDao_Impl.getRequiredConverters());
+    _typeConvertersMap.put(UserDao.class, UserDao_Impl.getRequiredConverters());
     return _typeConvertersMap;
   }
 
@@ -167,6 +186,20 @@ public final class AppDatabase_Impl extends AppDatabase {
           _reportDao = new ReportDao_Impl(this);
         }
         return _reportDao;
+      }
+    }
+  }
+
+  @Override
+  public UserDao userDao() {
+    if (_userDao != null) {
+      return _userDao;
+    } else {
+      synchronized(this) {
+        if(_userDao == null) {
+          _userDao = new UserDao_Impl(this);
+        }
+        return _userDao;
       }
     }
   }

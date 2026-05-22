@@ -17,11 +17,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.nammaraste.health.ui.screens.HomeScreen
-import com.nammaraste.health.ui.screens.MapScreen
-import com.nammaraste.health.ui.screens.ReportScreen
-import com.nammaraste.health.ui.viewmodels.ReportViewModel
-import com.nammaraste.health.ui.viewmodels.ReportViewModelFactory
+import com.nammaraste.health.ui.screens.*
+import com.nammaraste.health.ui.viewmodels.*
 import com.nammaraste.health.ui.theme.NammaGreen
 import com.nammaraste.health.ui.theme.NammaRasteTheme
 
@@ -31,17 +28,24 @@ class MainActivity : ComponentActivity() {
         // AppData.init(this) // Handled in Application class
         enableEdgeToEdge()
         setContent {
+            val app = application as NammaRasteApplication
             val viewModel: ReportViewModel = viewModel(
-                factory = ReportViewModelFactory((application as NammaRasteApplication).repository)
+                factory = ReportViewModelFactory(app.repository)
+            )
+            val authViewModel: AuthViewModel = viewModel(
+                factory = AuthViewModelFactory(app.authRepository)
             )
             NammaRasteTheme(darkTheme = false) {
-                NammaRasteApp(viewModel)
+                NammaRasteApp(viewModel, authViewModel)
             }
         }
     }
 }
 
 sealed class Screen(val route: String) {
+    object Intro : Screen("intro")
+    object Login : Screen("login")
+    object SignUp : Screen("signup")
     object Home : Screen("home")
     object Report : Screen("report")
     object Map : Screen("map")
@@ -57,9 +61,11 @@ data class BottomNavItem(
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun NammaRasteApp(viewModel: ReportViewModel) {
-    var currentScreen by remember { mutableStateOf<Screen>(Screen.Home) }
+fun NammaRasteApp(viewModel: ReportViewModel, authViewModel: AuthViewModel) {
+    var currentScreen by remember { mutableStateOf<Screen>(Screen.Intro) }
     var isKannada by remember { mutableStateOf(false) }
+
+    val authState by authViewModel.authState.collectAsState()
 
     val navItems = listOf(
         BottomNavItem(Screen.Home, "Home", "ಮುಖಪುಟ", Icons.Filled.Home, Icons.Outlined.Home),
@@ -67,38 +73,42 @@ fun NammaRasteApp(viewModel: ReportViewModel) {
         BottomNavItem(Screen.Map, "Map", "ನಕ್ಷೆ", Icons.Filled.Map, Icons.Outlined.Map)
     )
 
+    val showBottomBar = currentScreen !in listOf(Screen.Intro, Screen.Login, Screen.SignUp)
+
     Scaffold(
         modifier = Modifier.fillMaxSize(),
         bottomBar = {
-            NavigationBar(
-                containerColor = MaterialTheme.colorScheme.surfaceVariant,
-                tonalElevation = 0.dp
-            ) {
-                navItems.forEach { item ->
-                    val selected = currentScreen == item.screen
-                    NavigationBarItem(
-                        selected = selected,
-                        onClick = { currentScreen = item.screen },
-                        icon = {
-                            Icon(
-                                imageVector = if (selected) item.iconSelected else item.iconUnselected,
-                                contentDescription = item.labelEn
+            if (showBottomBar) {
+                NavigationBar(
+                    containerColor = MaterialTheme.colorScheme.surfaceVariant,
+                    tonalElevation = 0.dp
+                ) {
+                    navItems.forEach { item ->
+                        val selected = currentScreen == item.screen
+                        NavigationBarItem(
+                            selected = selected,
+                            onClick = { currentScreen = item.screen },
+                            icon = {
+                                Icon(
+                                    imageVector = if (selected) item.iconSelected else item.iconUnselected,
+                                    contentDescription = item.labelEn
+                                )
+                            },
+                            label = {
+                                Text(
+                                    text = if (isKannada) item.labelKn else item.labelEn,
+                                    style = MaterialTheme.typography.labelSmall
+                                )
+                            },
+                            colors = NavigationBarItemDefaults.colors(
+                                selectedIconColor = NammaGreen,
+                                selectedTextColor = NammaGreen,
+                                indicatorColor = NammaGreen.copy(alpha = 0.12f),
+                                unselectedIconColor = MaterialTheme.colorScheme.onSurfaceVariant,
+                                unselectedTextColor = MaterialTheme.colorScheme.onSurfaceVariant
                             )
-                        },
-                        label = {
-                            Text(
-                                text = if (isKannada) item.labelKn else item.labelEn,
-                                style = MaterialTheme.typography.labelSmall
-                            )
-                        },
-                        colors = NavigationBarItemDefaults.colors(
-                            selectedIconColor = NammaGreen,
-                            selectedTextColor = NammaGreen,
-                            indicatorColor = NammaGreen.copy(alpha = 0.12f),
-                            unselectedIconColor = MaterialTheme.colorScheme.onSurfaceVariant,
-                            unselectedTextColor = MaterialTheme.colorScheme.onSurfaceVariant
                         )
-                    )
+                    }
                 }
             }
         }
@@ -124,6 +134,19 @@ fun NammaRasteApp(viewModel: ReportViewModel) {
                 label = "screen_transition"
             ) { screen ->
                 when (screen) {
+                    Screen.Intro -> IntroScreen(
+                        onGetStarted = { currentScreen = Screen.SignUp }
+                    )
+                    Screen.Login -> LoginScreen(
+                        viewModel = authViewModel,
+                        onNavigateToSignUp = { currentScreen = Screen.SignUp },
+                        onLoginSuccess = { currentScreen = Screen.Home }
+                    )
+                    Screen.SignUp -> SignUpScreen(
+                        viewModel = authViewModel,
+                        onNavigateToLogin = { currentScreen = Screen.Login },
+                        onSignUpSuccess = { currentScreen = Screen.Home }
+                    )
                     Screen.Home -> HomeScreen(
                         isKannada = isKannada,
                         onToggleLanguage = { isKannada = !isKannada },

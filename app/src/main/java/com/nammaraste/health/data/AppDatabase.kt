@@ -8,9 +8,10 @@ import androidx.sqlite.db.SupportSQLiteDatabase
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
-@Database(entities = [ReportEntity::class], version = 1, exportSchema = false)
+@Database(entities = [ReportEntity::class, UserEntity::class], version = 2, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun reportDao(): ReportDao
+    abstract fun userDao(): UserDao
 
     private class AppDatabaseCallback(
         private val scope: CoroutineScope
@@ -46,6 +47,7 @@ abstract class AppDatabase : RoomDatabase() {
                     "namma_raste_db"
                 )
                     .addCallback(AppDatabaseCallback(scope))
+                    .fallbackToDestructiveMigration()
                     .build()
                 INSTANCE = instance
                 instance

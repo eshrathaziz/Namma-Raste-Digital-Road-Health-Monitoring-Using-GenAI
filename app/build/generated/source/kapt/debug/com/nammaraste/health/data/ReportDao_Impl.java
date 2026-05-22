@@ -149,8 +149,7 @@ public final class ReportDao_Impl implements ReportDao {
   }
 
   @Override
-  public Object insertReport(final ReportEntity report,
-      final Continuation<? super Unit> $completion) {
+  public Object insertReport(final ReportEntity report, final Continuation<? super Unit> arg1) {
     return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
       @Override
       @NonNull
@@ -164,12 +163,11 @@ public final class ReportDao_Impl implements ReportDao {
           __db.endTransaction();
         }
       }
-    }, $completion);
+    }, arg1);
   }
 
   @Override
-  public Object deleteReport(final ReportEntity report,
-      final Continuation<? super Unit> $completion) {
+  public Object deleteReport(final ReportEntity report, final Continuation<? super Unit> arg1) {
     return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
       @Override
       @NonNull
@@ -183,12 +181,11 @@ public final class ReportDao_Impl implements ReportDao {
           __db.endTransaction();
         }
       }
-    }, $completion);
+    }, arg1);
   }
 
   @Override
-  public Object updateReport(final ReportEntity report,
-      final Continuation<? super Unit> $completion) {
+  public Object updateReport(final ReportEntity report, final Continuation<? super Unit> arg1) {
     return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
       @Override
       @NonNull
@@ -202,7 +199,7 @@ public final class ReportDao_Impl implements ReportDao {
           __db.endTransaction();
         }
       }
-    }, $completion);
+    }, arg1);
   }
 
   @Override
