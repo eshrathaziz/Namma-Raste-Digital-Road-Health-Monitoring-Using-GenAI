@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Namma Raste Health</string>
+    <string name="crack">Crack</string>
+    <string name="critical">Critical</string>
+    <string name="dashboard_title">Dashboard</string>
+    <string name="description">Description</string>
+    <string name="healthy">Healthy</string>
+    <string name="improve_ai">✨ Improve description using AI</string>
+    <string name="issue_type">Issue Type</string>
+    <string name="map_view">Map View</string>
+    <string name="moderate">Moderate</string>
+    <string name="nav_home">Home</string>
+    <string name="nav_map">Map</string>
+    <string name="nav_report">Report</string>
+    <string name="photo_upload">Tap to Upload Photo</string>
+    <string name="pothole">Pothole</string>
+    <string name="recent_reports">Recent Reports</string>
+    <string name="report_damage">Report Damage</string>
+    <string name="road_health_status">Road Health Status</string>
+    <string name="select_road">Select Road</string>
+    <string name="submit_report">Submit Report</string>
+    <string name="toggle_lang">ಕನ್ನಡ</string>
+    <string name="total_reports">Total Reports</string>
+    <string name="view_roads">View Roads</string>
+    <string name="water_log">Water Logging</string>
+    <string name="zone_east">East Zone</string>
+    <string name="zone_south">South Zone</string>
+    <style name="Theme.NammaRasteHealth" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:statusBarColor">#FFFFFF</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+</resources>

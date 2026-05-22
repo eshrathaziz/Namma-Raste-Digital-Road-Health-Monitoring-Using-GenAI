@@ -1,0 +1,34 @@
+R_DEF: Internal format may change without notice
+local
+drawable ic_launcher_background
+drawable ic_launcher_foreground
+mipmap ic_launcher
+mipmap ic_launcher_round
+string app_name
+string crack
+string critical
+string dashboard_title
+string description
+string healthy
+string improve_ai
+string issue_type
+string map_view
+string moderate
+string nav_home
+string nav_map
+string nav_report
+string photo_upload
+string pothole
+string recent_reports
+string report_damage
+string road_health_status
+string select_road
+string submit_report
+string toggle_lang
+string total_reports
+string view_roads
+string water_log
+string zone_east
+string zone_south
+style Theme.NammaRasteHealth
+xml file_paths

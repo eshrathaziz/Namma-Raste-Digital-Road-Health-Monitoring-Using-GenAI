@@ -1,0 +1,61 @@
+com.nammaraste.health.app-ui-text-release-0 C:\Users\eshra\.gradle\caches\8.8\transforms\04fbb16d71527b6725793013f58d9c63\transformed\ui-text-release\res
+com.nammaraste.health.app-room-runtime-2.6.1-1 C:\Users\eshra\.gradle\caches\8.8\transforms\096aea736b6199b21fe5882d290622b9\transformed\room-runtime-2.6.1\res
+com.nammaraste.health.app-maps-compose-4.3.3-2 C:\Users\eshra\.gradle\caches\8.8\transforms\1333e57d69aec0644a25dd57a6067b5f\transformed\maps-compose-4.3.3\res
+com.nammaraste.health.app-ui-unit-release-3 C:\Users\eshra\.gradle\caches\8.8\transforms\14ef512d427e3bf69102b1049bd5102c\transformed\ui-unit-release\res
+com.nammaraste.health.app-room-ktx-2.6.1-4 C:\Users\eshra\.gradle\caches\8.8\transforms\1b53d9638cd7b2671945bb1a105b16e5\transformed\room-ktx-2.6.1\res
+com.nammaraste.health.app-lifecycle-livedata-core-2.7.0-5 C:\Users\eshra\.gradle\caches\8.8\transforms\1d1a30419618ac4747743aeb90397f86\transformed\lifecycle-livedata-core-2.7.0\res
+com.nammaraste.health.app-lifecycle-runtime-2.7.0-6 C:\Users\eshra\.gradle\caches\8.8\transforms\215e9bc896f1c611c50a56cb65fde8aa\transformed\lifecycle-runtime-2.7.0\res
+com.nammaraste.health.app-material-ripple-release-7 C:\Users\eshra\.gradle\caches\8.8\transforms\225f12681c3781ec4b577b72eb0fafde\transformed\material-ripple-release\res
+com.nammaraste.health.app-lifecycle-livedata-2.7.0-8 C:\Users\eshra\.gradle\caches\8.8\transforms\226711e970731626d89e622edf45d78c\transformed\lifecycle-livedata-2.7.0\res
+com.nammaraste.health.app-activity-1.8.2-9 C:\Users\eshra\.gradle\caches\8.8\transforms\2a1a8818112423d735fe9f7c17a82d62\transformed\activity-1.8.2\res
+com.nammaraste.health.app-ui-graphics-release-10 C:\Users\eshra\.gradle\caches\8.8\transforms\2c0b96258f20579067f8a14ac67fa911\transformed\ui-graphics-release\res
+com.nammaraste.health.app-foundation-layout-release-11 C:\Users\eshra\.gradle\caches\8.8\transforms\2e1d575f1d8ad34665dac7c9085970ff\transformed\foundation-layout-release\res
+com.nammaraste.health.app-startup-runtime-1.1.1-12 C:\Users\eshra\.gradle\caches\8.8\transforms\323349845a36517cd39d4f0821c7c7dd\transformed\startup-runtime-1.1.1\res
+com.nammaraste.health.app-coil-base-2.6.0-13 C:\Users\eshra\.gradle\caches\8.8\transforms\37febcd09c017197e2bd82188f3abc54\transformed\coil-base-2.6.0\res
+com.nammaraste.health.app-activity-ktx-1.8.2-14 C:\Users\eshra\.gradle\caches\8.8\transforms\3a08839088b2c43e71994541e4c11e83\transformed\activity-ktx-1.8.2\res
+com.nammaraste.health.app-navigation-compose-2.7.7-15 C:\Users\eshra\.gradle\caches\8.8\transforms\3e6d55fc5b05e62721ff471ee95704c7\transformed\navigation-compose-2.7.7\res
+com.nammaraste.health.app-appcompat-resources-1.6.1-16 C:\Users\eshra\.gradle\caches\8.8\transforms\3e6e3dc1081410da44f8754229ca989a\transformed\appcompat-resources-1.6.1\res
+com.nammaraste.health.app-lifecycle-viewmodel-ktx-2.7.0-17 C:\Users\eshra\.gradle\caches\8.8\transforms\4ce5110a1993093eca38055d13193c3c\transformed\lifecycle-viewmodel-ktx-2.7.0\res
+com.nammaraste.health.app-play-services-maps-18.2.0-18 C:\Users\eshra\.gradle\caches\8.8\transforms\4d3f53cc37d063c04b71179c7bff191a\transformed\play-services-maps-18.2.0\res
+com.nammaraste.health.app-runtime-saveable-release-19 C:\Users\eshra\.gradle\caches\8.8\transforms\538b61dcb59699d95c413331a5d21710\transformed\runtime-saveable-release\res
+com.nammaraste.health.app-lifecycle-viewmodel-2.7.0-20 C:\Users\eshra\.gradle\caches\8.8\transforms\565f0a204df90cb86b89f447573cba9d\transformed\lifecycle-viewmodel-2.7.0\res
+com.nammaraste.health.app-runtime-release-21 C:\Users\eshra\.gradle\caches\8.8\transforms\5cc4e46161e5ecdf1255bb15182a9883\transformed\runtime-release\res
+com.nammaraste.health.app-savedstate-ktx-1.2.1-22 C:\Users\eshra\.gradle\caches\8.8\transforms\5f13c7cbfadd5b36b6f10a887944de5a\transformed\savedstate-ktx-1.2.1\res
+com.nammaraste.health.app-play-services-basement-18.3.0-23 C:\Users\eshra\.gradle\caches\8.8\transforms\61e6027575ea5a79995c6f853e222d44\transformed\play-services-basement-18.3.0\res
+com.nammaraste.health.app-lifecycle-livedata-core-ktx-2.7.0-24 C:\Users\eshra\.gradle\caches\8.8\transforms\664417c411bbe339302fddbe44ad1f4f\transformed\lifecycle-livedata-core-ktx-2.7.0\res
+com.nammaraste.health.app-navigation-runtime-2.7.7-25 C:\Users\eshra\.gradle\caches\8.8\transforms\682eddfac46df50ec96e888bf4e0e01a\transformed\navigation-runtime-2.7.7\res
+com.nammaraste.health.app-material3-1.1.2-26 C:\Users\eshra\.gradle\caches\8.8\transforms\786240ba3a12741a60926036faf901f6\transformed\material3-1.1.2\res
+com.nammaraste.health.app-sqlite-2.4.0-27 C:\Users\eshra\.gradle\caches\8.8\transforms\7a510d68fdb5e4147e43e48a34b3b57f\transformed\sqlite-2.4.0\res
+com.nammaraste.health.app-lifecycle-viewmodel-compose-2.7.0-28 C:\Users\eshra\.gradle\caches\8.8\transforms\7d96cd55f00517056add9a1a02a12a43\transformed\lifecycle-viewmodel-compose-2.7.0\res
+com.nammaraste.health.app-material-icons-core-release-29 C:\Users\eshra\.gradle\caches\8.8\transforms\81bcd102d95d46cdc8466a19085a62b0\transformed\material-icons-core-release\res
+com.nammaraste.health.app-foundation-release-30 C:\Users\eshra\.gradle\caches\8.8\transforms\89a381223be30f9abcde634d880dd182\transformed\foundation-release\res
+com.nammaraste.health.app-customview-poolingcontainer-1.0.0-31 C:\Users\eshra\.gradle\caches\8.8\transforms\8ba29895741b95a8eda9335e68825ea7\transformed\customview-poolingcontainer-1.0.0\res
+com.nammaraste.health.app-core-ktx-1.12.0-32 C:\Users\eshra\.gradle\caches\8.8\transforms\8c1adf8db45ff58c673865da36336a2b\transformed\core-ktx-1.12.0\res
+com.nammaraste.health.app-core-runtime-2.2.0-33 C:\Users\eshra\.gradle\caches\8.8\transforms\8c888905b3bc3381835ca612af526229\transformed\core-runtime-2.2.0\res
+com.nammaraste.health.app-lifecycle-runtime-ktx-2.7.0-34 C:\Users\eshra\.gradle\caches\8.8\transforms\9098b26516004fdd62e5f81891cc83d2\transformed\lifecycle-runtime-ktx-2.7.0\res
+com.nammaraste.health.app-ui-geometry-release-35 C:\Users\eshra\.gradle\caches\8.8\transforms\97dccd99d4f2201834cfad8b0ec1c4b1\transformed\ui-geometry-release\res
+com.nammaraste.health.app-animation-core-release-36 C:\Users\eshra\.gradle\caches\8.8\transforms\9a99340f58694463fd8d0a2c3ee244d9\transformed\animation-core-release\res
+com.nammaraste.health.app-ui-release-37 C:\Users\eshra\.gradle\caches\8.8\transforms\9c6d4378dd1f409b6e955094c22b9f81\transformed\ui-release\res
+com.nammaraste.health.app-annotation-experimental-1.3.0-38 C:\Users\eshra\.gradle\caches\8.8\transforms\9d76e253d4886a47eda3161ae9d768e8\transformed\annotation-experimental-1.3.0\res
+com.nammaraste.health.app-play-services-base-18.3.0-39 C:\Users\eshra\.gradle\caches\8.8\transforms\a272b9ddb773292ea47a5b71e45a4f61\transformed\play-services-base-18.3.0\res
+com.nammaraste.health.app-savedstate-1.2.1-40 C:\Users\eshra\.gradle\caches\8.8\transforms\ac98eb65b8ae165071f5e6c4e4e8aa3f\transformed\savedstate-1.2.1\res
+com.nammaraste.health.app-material-icons-extended-release-41 C:\Users\eshra\.gradle\caches\8.8\transforms\aef9f11dd4c8c45e6c50a9255c20613a\transformed\material-icons-extended-release\res
+com.nammaraste.health.app-navigation-common-2.7.7-42 C:\Users\eshra\.gradle\caches\8.8\transforms\b44de40f8a894f65d654fbb2285b3fdc\transformed\navigation-common-2.7.7\res
+com.nammaraste.health.app-profileinstaller-1.3.1-43 C:\Users\eshra\.gradle\caches\8.8\transforms\bcb0db9a3c41135221701c346d080616\transformed\profileinstaller-1.3.1\res
+com.nammaraste.health.app-lifecycle-viewmodel-savedstate-2.7.0-44 C:\Users\eshra\.gradle\caches\8.8\transforms\bd717c80326b28ec943679680e9df462\transformed\lifecycle-viewmodel-savedstate-2.7.0\res
+com.nammaraste.health.app-ui-util-release-45 C:\Users\eshra\.gradle\caches\8.8\transforms\c146664c2efb493a11f93b1c209207f0\transformed\ui-util-release\res
+com.nammaraste.health.app-animation-release-46 C:\Users\eshra\.gradle\caches\8.8\transforms\c3c2b96d2a80c87c034c82240a579f27\transformed\animation-release\res
+com.nammaraste.health.app-lifecycle-process-2.7.0-47 C:\Users\eshra\.gradle\caches\8.8\transforms\c9699966e237367931930975e82a8d05\transformed\lifecycle-process-2.7.0\res
+com.nammaraste.health.app-sqlite-framework-2.4.0-48 C:\Users\eshra\.gradle\caches\8.8\transforms\ca146cdf2b0953bf6093718e8675c8aa\transformed\sqlite-framework-2.4.0\res
+com.nammaraste.health.app-navigation-common-ktx-2.7.7-49 C:\Users\eshra\.gradle\caches\8.8\transforms\e5e90b2100529401a245e90ff09457a7\transformed\navigation-common-ktx-2.7.7\res
+com.nammaraste.health.app-ui-tooling-preview-release-50 C:\Users\eshra\.gradle\caches\8.8\transforms\e7842894bd567e40bc66b616ac3a7bb2\transformed\ui-tooling-preview-release\res
+com.nammaraste.health.app-activity-compose-1.8.2-51 C:\Users\eshra\.gradle\caches\8.8\transforms\f28851dcc117b2dbbbcb52a0d4d90fa6\transformed\activity-compose-1.8.2\res
+com.nammaraste.health.app-emoji2-1.3.0-52 C:\Users\eshra\.gradle\caches\8.8\transforms\f360989d1fe95fe011d21fbe8514afac\transformed\emoji2-1.3.0\res
+com.nammaraste.health.app-core-1.12.0-53 C:\Users\eshra\.gradle\caches\8.8\transforms\f37a30fec0839bf9ada2a54219d6056e\transformed\core-1.12.0\res
+com.nammaraste.health.app-navigation-runtime-ktx-2.7.7-54 C:\Users\eshra\.gradle\caches\8.8\transforms\f5220017ff375bc94141fbed23102947\transformed\navigation-runtime-ktx-2.7.7\res
+com.nammaraste.health.app-resValues-55 C:\Users\eshra\Desktop\namma raste\NammaRasteAndroid\app\build\generated\res\resValues\debug
+com.nammaraste.health.app-packageDebugResources-56 C:\Users\eshra\Desktop\namma raste\NammaRasteAndroid\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+com.nammaraste.health.app-packageDebugResources-57 C:\Users\eshra\Desktop\namma raste\NammaRasteAndroid\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+com.nammaraste.health.app-merged_res-58 C:\Users\eshra\Desktop\namma raste\NammaRasteAndroid\app\build\intermediates\merged_res\debug
+com.nammaraste.health.app-debug-59 C:\Users\eshra\Desktop\namma raste\NammaRasteAndroid\app\src\debug\res
+com.nammaraste.health.app-main-60 C:\Users\eshra\Desktop\namma raste\NammaRasteAndroid\app\src\main\res

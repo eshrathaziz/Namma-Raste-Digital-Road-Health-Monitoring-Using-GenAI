@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ನಮ್ಮ ರಸ್ತೆ ಆರೋಗ್ಯ</string>
+    <string name="crack">ಬಿರುಕು</string>
+    <string name="critical">ನಿರ್ಣಾಯಕ</string>
+    <string name="dashboard_title">ಡ್ಯಾಶ್‌ಬೋರ್ಡ್</string>
+    <string name="description">ವಿವರಣೆ</string>
+    <string name="healthy">ಉತ್ತಮ</string>
+    <string name="improve_ai">✨ AI ಬಳಸಿ ವಿವರಣೆಯನ್ನು ಸುಧಾರಿಸಿ</string>
+    <string name="issue_type">ಸಮಸ್ಯೆಯ ಪ್ರಕಾರ</string>
+    <string name="map_view">ನಕ್ಷೆ ವೀಕ್ಷಣೆ</string>
+    <string name="moderate">ಸಾಧಾರಣ</string>
+    <string name="nav_home">ಮುಖಪುಟ</string>
+    <string name="nav_map">ನಕ್ಷೆ</string>
+    <string name="nav_report">ವರದಿ</string>
+    <string name="photo_upload">ಫೋಟೋ ಅಪ್‌ಲೋಡ್ ಮಾಡಲು ಟ್ಯಾಪ್ ಮಾಡಿ</string>
+    <string name="pothole">ಗುಂಡಿ</string>
+    <string name="recent_reports">ಇತ್ತೀಚಿನ ವರದಿಗಳು</string>
+    <string name="report_damage">ಹಾನಿ ವರದಿ ಮಾಡಿ</string>
+    <string name="road_health_status">ರಸ್ತೆ ಆರೋಗ್ಯ ಸ್ಥಿತಿ</string>
+    <string name="select_road">ರಸ್ತೆ ಆಯ್ಕೆಮಾಡಿ</string>
+    <string name="submit_report">ವರದಿ ಸಲ್ಲಿಸಿ</string>
+    <string name="toggle_lang">English</string>
+    <string name="total_reports">ಒಟ್ಟು ವರದಿಗಳು</string>
+    <string name="view_roads">ರಸ್ತೆಗಳನ್ನು ವೀಕ್ಷಿಸಿ</string>
+    <string name="water_log">ನೀರು ನಿಲ್ಲುವುದು</string>
+    <string name="zone_east">ಪೂರ್ವ ವಲಯ</string>
+    <string name="zone_south">ದಕ್ಷಿಣ ವಲಯ</string>
+</resources>
