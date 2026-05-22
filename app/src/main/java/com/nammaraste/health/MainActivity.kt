@@ -49,6 +49,7 @@ sealed class Screen(val route: String) {
     object Home : Screen("home")
     object Report : Screen("report")
     object Map : Screen("map")
+    object AdminDashboard : Screen("admin_dashboard")
 }
 
 data class BottomNavItem(
@@ -66,6 +67,7 @@ fun NammaRasteApp(viewModel: ReportViewModel, authViewModel: AuthViewModel) {
     var isKannada by remember { mutableStateOf(false) }
 
     val authState by authViewModel.authState.collectAsState()
+    val currentUser by authViewModel.currentUser.collectAsState()
 
     val navItems = listOf(
         BottomNavItem(Screen.Home, "Home", "ಮುಖಪುಟ", Icons.Filled.Home, Icons.Outlined.Home),
@@ -73,7 +75,7 @@ fun NammaRasteApp(viewModel: ReportViewModel, authViewModel: AuthViewModel) {
         BottomNavItem(Screen.Map, "Map", "ನಕ್ಷೆ", Icons.Filled.Map, Icons.Outlined.Map)
     )
 
-    val showBottomBar = currentScreen !in listOf(Screen.Intro, Screen.Login, Screen.SignUp)
+    val showBottomBar = currentScreen !in listOf(Screen.Intro, Screen.Login, Screen.SignUp, Screen.AdminDashboard)
 
     Scaffold(
         modifier = Modifier.fillMaxSize(),
@@ -152,6 +154,8 @@ fun NammaRasteApp(viewModel: ReportViewModel, authViewModel: AuthViewModel) {
                         onToggleLanguage = { isKannada = !isKannada },
                         onNavigateToReport = { currentScreen = Screen.Report },
                         onNavigateToMap = { currentScreen = Screen.Map },
+                        onNavigateToAdmin = { currentScreen = Screen.AdminDashboard },
+                        isAdmin = currentUser?.isAdmin == true,
                         viewModel = viewModel
                     )
                     Screen.Report -> ReportScreen(
@@ -162,6 +166,10 @@ fun NammaRasteApp(viewModel: ReportViewModel, authViewModel: AuthViewModel) {
                     Screen.Map -> MapScreen(
                         isKannada = isKannada,
                         viewModel = viewModel
+                    )
+                    Screen.AdminDashboard -> AdminDashboardScreen(
+                        viewModel = viewModel,
+                        onBack = { currentScreen = Screen.Home }
                     )
                 }
             }

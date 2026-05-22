@@ -46,6 +46,8 @@ fun HomeScreen(
     onToggleLanguage: () -> Unit,
     onNavigateToReport: () -> Unit,
     onNavigateToMap: () -> Unit,
+    onNavigateToAdmin: () -> Unit = {},
+    isAdmin: Boolean = false,
     viewModel: ReportViewModel
 ) {
     val context = LocalContext.current
@@ -79,25 +81,39 @@ fun HomeScreen(
                         color = MaterialTheme.colorScheme.onSurfaceVariant
                     )
                 }
-                // Language Toggle Chip
-                FilledTonalButton(
-                    onClick = onToggleLanguage,
-                    shape = RoundedCornerShape(20.dp),
-                    colors = ButtonDefaults.filledTonalButtonColors(
-                        containerColor = MaterialTheme.colorScheme.secondaryContainer
-                    ),
-                    contentPadding = PaddingValues(horizontal = 14.dp, vertical = 6.dp)
-                ) {
-                    Icon(
-                        Icons.Filled.Translate,
-                        contentDescription = "Toggle Language",
-                        modifier = Modifier.size(16.dp)
-                    )
-                    Spacer(modifier = Modifier.width(6.dp))
-                    Text(
-                        text = if (isKannada) "English" else "ಕನ್ನಡ",
-                        style = MaterialTheme.typography.labelMedium
-                    )
+
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    if (isAdmin) {
+                        IconButton(onClick = onNavigateToAdmin) {
+                            Icon(
+                                Icons.Filled.AdminPanelSettings,
+                                contentDescription = "Admin Dashboard",
+                                tint = NammaGreen
+                            )
+                        }
+                        Spacer(modifier = Modifier.width(8.dp))
+                    }
+
+                    // Language Toggle Chip
+                    FilledTonalButton(
+                        onClick = onToggleLanguage,
+                        shape = RoundedCornerShape(20.dp),
+                        colors = ButtonDefaults.filledTonalButtonColors(
+                            containerColor = MaterialTheme.colorScheme.secondaryContainer
+                        ),
+                        contentPadding = PaddingValues(horizontal = 14.dp, vertical = 6.dp)
+                    ) {
+                        Icon(
+                            Icons.Filled.Translate,
+                            contentDescription = "Toggle Language",
+                            modifier = Modifier.size(16.dp)
+                        )
+                        Spacer(modifier = Modifier.width(6.dp))
+                        Text(
+                            text = if (isKannada) "English" else "ಕನ್ನಡ",
+                            style = MaterialTheme.typography.labelMedium
+                        )
+                    }
                 }
             }
         }

@@ -20,11 +20,15 @@ class AuthViewModel(private val repository: AuthRepository) : ViewModel() {
     private val _authState = MutableStateFlow<AuthState>(AuthState.Idle)
     val authState: StateFlow<AuthState> = _authState
 
+    private val _currentUser = MutableStateFlow<UserEntity?>(null)
+    val currentUser: StateFlow<UserEntity?> = _currentUser
+
     fun login(email: String, password: String) {
         viewModelScope.launch {
             _authState.value = AuthState.Loading
             val user = repository.getUserByEmail(email)
             if (user != null && user.password == password) {
+                _currentUser.value = user
                 _authState.value = AuthState.Success(user)
             } else {
                 _authState.value = AuthState.Error("Invalid email or password")
@@ -39,14 +43,17 @@ class AuthViewModel(private val repository: AuthRepository) : ViewModel() {
             if (existingUser != null) {
                 _authState.value = AuthState.Error("User already exists")
             } else {
-                val newUser = UserEntity(email = email, password = password)
+                val isAdmin = email == "admin@nammaraste.com"
+                val newUser = UserEntity(email = email, password = password, isAdmin = isAdmin)
                 repository.registerUser(newUser)
+                _currentUser.value = newUser
                 _authState.value = AuthState.Success(newUser)
             }
         }
     }
 
     fun logout() {
+        _currentUser.value = null
         _authState.value = AuthState.Idle
     }
 }

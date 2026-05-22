@@ -8,5 +8,6 @@ data class UserEntity(
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0,
     val email: String,
-    val password: String // In a real app, this should be hashed
+    val password: String, // In a real app, this should be hashed
+    val isAdmin: Boolean = false
 )
