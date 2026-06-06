@@ -8,18 +8,12 @@
 Namma Raste is a comprehensive road health tracking application designed for Bengaluru. It leverages GenAI concepts to analyze road damage, allows citizens to report issues with GPS tagging, and provides an Admin Dashboard for local authorities to track and resolve road-related grievances.
 
 
-
 ## ✨ Key Features
 - **AI-Powered Analysis**: Real-time road damage detection concepts.
 - **Citizen Auditing**: Easy reporting tool for potholes, waterlogging, and cracks.
 - **Road Health Index**: A live dashboard showing the health of major Bengaluru roads.
 - **Admin Dashboard**: Specialized access for authorities to manage and resolve reports.
 - **Bilingual Support**: Fully functional in both English and Kannada.
-
-## 🛠️ Admin Access
-To access the Admin Dashboard, use the following account:
-- **Email:** `admin@nammaraste.com`
-- **Password:** (Set during your first Sign Up)
 
 ## 🚀 Deployment
 This project uses **GitHub Actions** for CI/CD:
