@@ -7,9 +7,7 @@
 
 Namma Raste is a comprehensive road health tracking application designed for Bengaluru. It leverages GenAI concepts to analyze road damage, allows citizens to report issues with GPS tagging, and provides an Admin Dashboard for local authorities to track and resolve road-related grievances.
 
-## 🔗 Quick Links
-- **Live Info Site:** [https://eshrathaziz.github.io/Namma-Raste-Digital-Road-Health-Monitoring-Using-GenAI/](https://eshrathaziz.github.io/Namma-Raste-Digital-Road-Health-Monitoring-Using-GenAI/)
-- **Latest Release (APK):** [Download here](https://github.com/eshrathaziz/Namma-Raste-Digital-Road-Health-Monitoring-Using-GenAI/releases)
+
 
 ## ✨ Key Features
 - **AI-Powered Analysis**: Real-time road damage detection concepts.
